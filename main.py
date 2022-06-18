@@ -116,7 +116,7 @@ class ImageExtractor:
 
 
 if __name__ == '__main__':
-    src_file_path = "URLs.txt"
+    src_file_path = "urls.txt"
     save_file_path = "images/"
     img_extractor_obj = ImageExtractor(src_file_path, save_file_path)
     status = img_extractor_obj.process_urls()
