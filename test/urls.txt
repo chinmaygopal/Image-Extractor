@@ -1,0 +1,5 @@
+http://eu.httpbin.org
+http://s9.postimage.org/n92phj9tr/image1.jpg
+http://mywebserver.com/images/24174.jpg
+http://somewebsrv.com/img/992147.jpg
+http://s9.postimage.org/n92phj9tr/image2.jpg
