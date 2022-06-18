@@ -1,0 +1,8 @@
+root - ERROR - Content in http://eu.httpbin.org not an image
+root - ERROR - Content in http://mywebserver.com/images/24174.jpg not an image
+urllib3.connectionpool - WARNING - Retrying (Retry(total=9, connect=4, read=2, redirect=5, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000135E97CC4C8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /img/992147.jpg
+urllib3.connectionpool - WARNING - Retrying (Retry(total=8, connect=3, read=2, redirect=5, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000135E97CCEC8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /img/992147.jpg
+urllib3.connectionpool - WARNING - Retrying (Retry(total=7, connect=2, read=2, redirect=5, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000135E97CF5C8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /img/992147.jpg
+urllib3.connectionpool - WARNING - Retrying (Retry(total=6, connect=1, read=2, redirect=5, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000135E97CFBC8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /img/992147.jpg
+urllib3.connectionpool - WARNING - Retrying (Retry(total=5, connect=0, read=2, redirect=5, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000135E97E6208>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /img/992147.jpg
+root - ERROR - Cannot reach page

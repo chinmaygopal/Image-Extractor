@@ -1,5 +1,8 @@
 import urllib3
 from urllib3 import PoolManager, Retry
+import logging
+
+logging.basicConfig(filename='app.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
 
 
 class ImageExtractor:
@@ -36,31 +39,31 @@ class ImageExtractor:
                 self.__save_image(response.data, filename)
             else:
                 return_status = "Content in " + each_url + " not an image"
-                print("Content in " + each_url + " not an image")
+                logging.error("Content in " + each_url + " not an image")
 
         except urllib3.exceptions.ConnectionError:
             return_status = "A connection error occurred. Please verify " + each_url
-            print("A connection error occurred. Please verify " + each_url)
+            logging.error("A connection error occurred. Please verify " + each_url)
 
         except urllib3.exceptions.ConnectTimeoutError:
             return_status = "A connection timeout occurred"
-            print("A connection timeout occurred")
+            logging.error("A connection timeout occurred")
 
         except urllib3.exceptions.ResponseError:
             return_status = "Error in data url response"
-            print("Error in data url response")
+            logging.error("Error in data url response")
 
         except urllib3.exceptions.HTTPError:
             return_status = "Cannot reach page"
-            print("Cannot reach page")
+            logging.error("Cannot reach page")
 
         except urllib3.exceptions.RequestError:
             return_status = "an ambiguous exception that occurred while handling your request"
-            print("an ambiguous exception that occurred while handling your request")
+            logging.error("an ambiguous exception that occurred while handling your request")
 
         except ValueError:
             return_status = "value error"
-            print("value error")
+            logging.error("value error")
 
         return return_status
 
@@ -69,6 +72,7 @@ class ImageExtractor:
         Read all the urls from the text file and perform any preprocessing if necessary
         :return: None
         """
+        # read the urls in file
         with open(self.__source_file_path, "r") as f:
             self.__list_of_urls = f.readlines()
         self.__list_of_urls = list(map(str.strip, self.__list_of_urls))
@@ -79,6 +83,7 @@ class ImageExtractor:
         Iterates through each URL to extract image from
         :return: return_status: the status of the operation
         """
+        # check if file is empty
         if len(self.__list_of_urls) == 0:
             return_status = "File Empty"
 
