@@ -10,7 +10,7 @@ urllib3 (>=1.26.9)
 
 ## Folder Structure (Overview)
     |-----test/  ~ test scripts for the app
-    |-----images/  ~ default folder in which the exctracted images are saved
+    |-----images/  ~ default folder in which the extracted images are saved
     |-----app.log ~ log file for the application 
     |-----main.py ~ the file to be executed 
     |-----urls.txt ~ the default file contianing the urls
