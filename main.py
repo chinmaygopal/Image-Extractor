@@ -7,13 +7,13 @@ logging.basicConfig(filename='app.log', filemode='w', format='%(name)s - %(level
 
 class ImageExtractor:
     """
-    Class contains procedures to extract images from urls in specified
+    Class contains procedures to extract images from URLs in specified
     text file and saves in the mentioned location
     """
 
     def __init__(self, src_file_path, save_file_path) -> None:
         """
-        :param src_file_path: the file location of the text file containing the urls
+        :param src_file_path: the file location of the text file containing the URLs
         :param save_file_path: the location for storing the extracted images
         """
         self.__source_file_path = src_file_path
@@ -25,7 +25,7 @@ class ImageExtractor:
     def __extract_image_from_each_url(self, each_url) -> str:
         """
         Retrieves image from the specified URL and saves it.
-        :param each_url: url to extract image from
+        :param each_url: URL to extract image from
         :return: return_status: status of the operation
         """
         return_status = "Success"
@@ -50,8 +50,8 @@ class ImageExtractor:
             logging.error("A connection timeout occurred")
 
         except urllib3.exceptions.ResponseError:
-            return_status = "Error in data url response"
-            logging.error("Error in data url response")
+            return_status = "Error in data URL response"
+            logging.error("Error in data URL response")
 
         except urllib3.exceptions.HTTPError:
             return_status = "Cannot reach page"
@@ -69,10 +69,10 @@ class ImageExtractor:
 
     def __retrieve_urls(self) -> None:
         """
-        Read all the urls from the text file and perform any preprocessing if necessary
+        Read all the URLs from the text file and perform any preprocessing if necessary
         :return: None
         """
-        # read the urls in file
+        # read the URLs in file
         with open(self.__source_file_path, "r") as f:
             self.__list_of_urls = f.readlines()
         self.__list_of_urls = list(map(str.strip, self.__list_of_urls))
@@ -105,7 +105,7 @@ class ImageExtractor:
 
     def process_urls(self) -> str:
         """
-        Interface available to user to perform the image extraction from urls operation
+        Interface available to user to perform the image extraction from URLs operation
         :return: return_status: the status of the operation
         """
 
@@ -116,7 +116,7 @@ class ImageExtractor:
 
 
 if __name__ == '__main__':
-    src_file_path = "urls.txt"
+    src_file_path = "URLs.txt"
     save_file_path = "images/"
     img_extractor_obj = ImageExtractor(src_file_path, save_file_path)
     status = img_extractor_obj.process_urls()
